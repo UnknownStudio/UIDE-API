@@ -1,0 +1,3 @@
+[submodule "AsmEventBus"]
+	path = AsmEventBus
+	url = https://github.com/HuajiStudio/AsmEventBus.git
