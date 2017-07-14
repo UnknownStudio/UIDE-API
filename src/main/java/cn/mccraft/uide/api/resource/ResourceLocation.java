@@ -41,4 +41,22 @@ public class ResourceLocation {
 	public Path toPath() {
 		return Paths.get(domain, location);
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		ResourceLocation that = (ResourceLocation) o;
+
+		if (domain != null ? !domain.equals(that.domain) : that.domain != null) return false;
+		return location != null ? location.equals(that.location) : that.location == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = domain != null ? domain.hashCode() : 0;
+		result = 31 * result + (location != null ? location.hashCode() : 0);
+		return result;
+	}
 }
